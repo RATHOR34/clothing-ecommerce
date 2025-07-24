@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.img-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.img-thumbnail:hover {
+  border: 2px solid #007bff;
+}
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+  <div class="row g-4">
+    <!-- Product Image -->
+    <div class="col-md-6">
+      <img src="https://via.placeholder.com/500x600" class="img-fluid rounded" alt="Product Image">
+      <div class="d-flex gap-2 mt-2">
+        <img src="https://via.placeholder.com/100x100" class="img-thumbnail" alt="thumb">
+        <img src="https://via.placeholder.com/100x100" class="img-thumbnail" alt="thumb">
+        <img src="https://via.placeholder.com/100x100" class="img-thumbnail" alt="thumb">
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-6">
+      <h2>Men's Casual Denim Jacket</h2>
+      <p class="text-muted">Brand: Levi's</p>
+      <h4 class="text-danger">$59.99</h4>
+      
+      <!-- Rating -->
+      <div class="mb-3">
+        <span class="text-warning">★ ★ ★ ★ ☆</span>
+        <span class="text-muted">(120 reviews)</span>
+      </div>
+
+      <!-- Size Selection -->
+      <div class="mb-3">
+        <label class="form-label">Size:</label>
+        <select class="form-select w-auto">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>XL</option>
+        </select>
+      </div>
+
+      <!-- Color Options -->
+      <div class="mb-3">
+        <label class="form-label">Color:</label>
+        <div class="d-flex gap-2">
+          <button class="btn border rounded-circle bg-dark" style="width: 30px; height: 30px;"></button>
+          <button class="btn border rounded-circle bg-primary" style="width: 30px; height: 30px;"></button>
+          <button class="btn border rounded-circle bg-danger" style="width: 30px; height: 30px;"></button>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mb-4">
+        <button class="btn btn-primary me-2">Add to Cart</button>
+        <button class="btn btn-outline-dark">Buy Now</button>
+      </div>
+
+      <!-- Description -->
+      <p><strong>Description:</strong> A premium quality denim jacket perfect for all seasons. Stylish, comfortable, and durable. Suitable for casual outings and layering.</p>
+      
+      <!-- Product Info -->
+      <ul class="list-unstyled">
+        <li><strong>Material:</strong> 100% Cotton</li>
+        <li><strong>Fit:</strong> Regular Fit</li>
+        <li><strong>Care:</strong> Machine wash cold</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
