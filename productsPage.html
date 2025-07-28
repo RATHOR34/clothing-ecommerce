@@ -1,95 +1,736 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-h2 {
-  font-weight: 600;
-}
-
-.img-thumbnail {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.img-thumbnail:hover {
-  border: 2px solid #007bff;
-}
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../navbar/style.css">
 </head>
 <body>
-    <div class="container py-5">
-  <div class="row g-4">
-    <!-- Product Image -->
-    <div class="col-md-6">
-      <img src="https://via.placeholder.com/500x600" class="img-fluid rounded" alt="Product Image">
-      <div class="d-flex gap-2 mt-2">
-        <img src="https://via.placeholder.com/100x100" class="img-thumbnail" alt="thumb">
-        <img src="https://via.placeholder.com/100x100" class="img-thumbnail" alt="thumb">
-        <img src="https://via.placeholder.com/100x100" class="img-thumbnail" alt="thumb">
-      </div>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-white  d-none d-lg-flex">
+        <div class="container d-flex justify-content-between">
 
-    <!-- Product Details -->
-    <div class="col-md-6">
-      <h2>Men's Casual Denim Jacket</h2>
-      <p class="text-muted">Brand: Levi's</p>
-      <h4 class="text-danger">$59.99</h4>
-      
-      <!-- Rating -->
-      <div class="mb-3">
-        <span class="text-warning">★ ★ ★ ★ ☆</span>
-        <span class="text-muted">(120 reviews)</span>
-      </div>
+            <!-- Left: Logo -->
+            <a class="navbar-brand d-flex align-items-center pe-3 flex-wrap" href="#">
+                <img src="./images/logo1-removebg-preview.png" alt="Logo" style="height: 70px;" />
+            </a>
 
-      <!-- Size Selection -->
-      <div class="mb-3">
-        <label class="form-label">Size:</label>
-        <select class="form-select w-auto">
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
-          <option>XL</option>
-        </select>
-      </div>
+            <!-- Center: Nav Links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarContentDesktop">
+                <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-4 fs-6">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs & Policies</a></li>
+                </ul>
+            </div>
 
-      <!-- Color Options -->
-      <div class="mb-3">
-        <label class="form-label">Color:</label>
-        <div class="d-flex gap-2">
-          <button class="btn border rounded-circle bg-dark" style="width: 30px; height: 30px;"></button>
-          <button class="btn border rounded-circle bg-primary" style="width: 30px; height: 30px;"></button>
-          <button class="btn border rounded-circle bg-danger" style="width: 30px; height: 30px;"></button>
+            <!-- Right: Buttons -->
+            <div class="d-flex align-items-center gap-lg-4 gap-2">
+
+
+                <div class="d-flex justify-content-between  align-items-center gap-4">
+                    <i class="fa-solid fs-5 fa-cart-shopping"></i>
+                    <i class="bi bi-search fs-5"></i>
+                    <i class="bi bi-heart fs-5"></i>
+
+                    <!-- Profile -->
+                    <div class="dropdown d-inline-block fs-5">
+                        <div id="profileToggleDesktop" class="d-flex align-items-center gap-2" style="cursor: pointer;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+
+                        <div id="profileDropdownDesktop" class=" dropdown-menu dropdown-menu-custom shadow m-2">
+                            <div class="dropdown-item d-flex align-items-center gap-3">
+                                <form class="p-4">
+                                    <!-- Email input -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="email" id="form2Example1" class="form-control" />
+                                        <label class="form-label" for="form2Example1">Email address</label>
+                                    </div>
+
+                                    <!-- Password input -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" id="form2Example2" class="form-control" />
+                                        <label class="form-label" for="form2Example2">Password</label>
+                                    </div>
+
+                                    <!-- 2 column grid layout for inline styling -->
+                                    <div class="row mb-4">
+                                        <div class="col d-flex justify-content-center">
+                                            <!-- Checkbox -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="form2Example31" checked />
+                                                <label class="form-check-label" for="form2Example31"> Remember me
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <!-- Simple link -->
+                                            <a href="#!">Forgot password?</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                                    <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>Not a member? <a href="#!">Register</a></p>
+                                        <p>or sign up with:</p>
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </button>
+
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-google"></i>
+                                        </button>
+
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-twitter"></i>
+                                        </button>
+
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-github"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </nav>
+
+    <!-- MOBILE NAVBAR (less than lg) -->
+    <nav class="navbar navbar-expand-lg bg-white d-flex d-lg-none">
+        <div class="container-fluid px-3">
+
+            <!-- Left: Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo1-removebg-preview.png" alt="Logo" style="height: 70px;" />
+            </a>
+
+            <!-- Right Side: Buttons -->
+            <div class="d-flex align-items-center gap-lg-4 gap-2">
+
+
+                <div class="d-flex justify-content-between  align-items-center gap-4">
+                    <i class="fa-solid fs-5 fa-cart-shopping"></i>
+                    <i class="bi bi-search fs-5"></i>
+                    <i class="bi bi-heart fs-5"></i>
+
+                    <!-- Profile -->
+                    <div class="dropdown d-inline-block fs-5">
+                        <div id="profileToggleMobile" class="d-flex align-items-center gap-2" style="cursor: pointer;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+
+                        <div id="profileDropdownMobile" class=" dropdown-menu dropdown-menu-custom shadow m-2">
+                            <div class="dropdown-item d-flex align-items-center gap-3">
+                                <form class="p-4">
+                                    <!-- Email input -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="email" id="form2Example1" class="form-control" />
+                                        <label class="form-label" for="form2Example1">Email address</label>
+                                    </div>
+
+                                    <!-- Password input -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" id="form2Example2" class="form-control" />
+                                        <label class="form-label" for="form2Example2">Password</label>
+                                    </div>
+
+                                    <!-- 2 column grid layout for inline styling -->
+                                    <div class="row mb-4">
+                                        <div class="col d-flex justify-content-center">
+                                            <!-- Checkbox -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="form2Example31" checked />
+                                                <label class="form-check-label" for="form2Example31"> Remember me
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <!-- Simple link -->
+                                            <a href="#!">Forgot password?</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                                    <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>Not a member? <a href="#!">Register</a></p>
+                                        <p>or sign up with:</p>
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </button>
+
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-google"></i>
+                                        </button>
+
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-twitter"></i>
+                                        </button>
+
+                                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-link btn-floating mx-1">
+                                            <i class="fab fa-github"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Toggle Button at the END -->
+            <button class="navbar-toggler p-1  shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon" style="width: 20px; height: 20px;"></span>
+            </button>
         </div>
-      </div>
 
-      <!-- Action Buttons -->
-      <div class="mb-4">
-        <button class="btn btn-primary me-2">Add to Cart</button>
-        <button class="btn btn-outline-dark">Buy Now</button>
-      </div>
+        <!-- Mobile Collapsible Nav Links -->
+        <div class="collapse navbar-collapse mt-2" id="mobileMenu">
+            <ul class="navbar-nav gap-2 fs-6 ps-4">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="About.html">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQs & Policies</a></li>
+            </ul>
+        </div>
 
-      <!-- Description -->
-      <p><strong>Description:</strong> A premium quality denim jacket perfect for all seasons. Stylish, comfortable, and durable. Suitable for casual outings and layering.</p>
-      
-      <!-- Product Info -->
-      <ul class="list-unstyled">
-        <li><strong>Material:</strong> 100% Cotton</li>
-        <li><strong>Fit:</strong> Regular Fit</li>
-        <li><strong>Care:</strong> Machine wash cold</li>
-      </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row   pt-4  ">
+            <div class="col-md-4 pt-4 light-bg">
+                <h5 class="ps-3 fw-bold text-white">BROWSE CATEGORIES</h5>
+                <ul class="list-unstyled text-white">
+                    <li class="p-3"><a href="" class="  text-decoration-none text-white">WOMEN'S CLOTHING</a></li>
+                    <li class="p-3"><a href="" class=" text-decoration-none text-white">MEN'S CLOTHING</a></li>
+                    <li class="p-3"><a href="" class="  text-decoration-none text-white">KIDS CLOTHING</a></li>
+                    <li class="p-3"><a href="" class="  text-decoration-none text-white">SCHOOL UNIFORM</a></li>
+                    <li class="p-3"><a href="" class="  text-decoration-none text-white">WOMEN ETHNIC</a></li>
+                    <li class="p-3"><a href="" class="  text-decoration-none text-white">WOMEN WESTERN</a></li>
+
+
+
+                </ul>
+            </div>
+            <div class="col-md-4 mt-3 mt-lg-0">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/saree3.avif" alt="" height="100%" width="100%"
+                             >
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Charvi Attractive Sarees</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>255</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">3.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+            <div class=" col-md-4" width="200px">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/saree2.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Charvi Attractive Sarees</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>160</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">4.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="featured">
+            <div class="text-center py-4">
+                <small class="text-muted" style="letter-spacing: 4px;">AMAZING SHOP</small>
+
+                <div class="row align-items-center mt-2">
+                    <div class="col">
+                        <hr class="border-secondary opacity-25">
+                    </div>
+
+                    <div class="col-auto">
+                        <h2 class="fw-bold mb-0">SAREE & TOP VARAITIES</h2>
+                    </div>
+
+                    <div class="col">
+                        <hr class="border-secondary opacity-25">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="wrapper-content-banner row align-items-center pt-4 m-auto ">
+            <div class="inner-banner col-md-3 ">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="./images/saree4.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Addarika fashionable Sarees</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>618</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">3.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+
+                </a>
+            </div>
+            <div class="inner-banner col-md-3">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/saree8.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Satin Silk Saree</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>156</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">2.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+            <div class="inner-banner col-md-3" width="200px">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/saree9.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Banarasi Silk Saree</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>160</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">4.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+            <div class="inner-banner col-md-3" width="200px">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/saree11.avif" alt="" height="100%" width="100%"
+                            >
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Aagyeyi Superior Sarees</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>435</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">3.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="wrapper-content-banner row align-items-center pt-4 m-auto ">
+            <div class="inner-banner col-md-3 ">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="./images/top1.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Top's and Tunics</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>339</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">3.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+
+                </a>
+            </div>
+            <div class="inner-banner col-md-3">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/top2.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Trendy Top's & Tunics</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>156</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">2.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+            <div class="inner-banner col-md-3" width="200px">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/top3.avif" alt="" height="100%" width="100%">
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Comfy Women Tops</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>160</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">4.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+            <div class="inner-banner col-md-3" width="200px">
+                <a href="" class="d-inline-block text-decoration-none  ">
+                    <div height="300px" width="250px">
+                        <img class="category" src="images/top7.avif" alt="" height="100%" width="100%"
+                            >
+                    </div>
+                    <div class="align-items-left py-3">
+                        <p class="title">Tops & Tunics</p>
+                        <h5 class="price pt-2"><i class="bi bi-currency-rupee"></i>255</h5>
+                        <label class="d-block free-delivery py-2" for="">Free Delivery</label>
+                        <label for="" class="rating">3.9 <i class="bi bi-star-fill "></i></label>
+                        <span class="review">4161 Reviews</span>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <div class="best light-color"  >
+        <div class="container py-3 text-center my-3">
+            <h2 class="fw-bold">BEST SELLERS</h2>
+            <p class="text-muted px-3 px-lg-0">Penatibus tristique parturient metus estiam primis nibh ante risus <br> fames
+                parturient in a odio adipiscing nulla.</p>
+
+            <div class="row justify-content-center mt-5">
+                <!-- Product Card -->
+                <div class="col-md-4 mb-4">
+                    <img src="./images/p3.avif" class="img-fluid" alt="Product 1">
+                    <h6 class="mt-3 title">Treandy Shirts</h6>
+                    <div>
+                        <span class="old-price"><i class="bi bi-currency-rupee"></i>579.00</span>
+                        <span class="new-price"><i class="bi bi-currency-rupee"></i>576.00</span>
+                    </div>
+                    <div class="countdown">
+                        <div class="timer-box">29<span>DAYS</span></div>
+                        <div class="timer-box">12<span>HR</span></div>
+                        <div class="timer-box">22<span>MIN</span></div>
+                        <div class="timer-box">11<span>SEC</span></div>
+                    </div>
+                </div>
+
+                <!-- Product Card -->
+                <div class="col-md-4 mb-4">
+                    <img src="./images/p7.avif" class="img-fluid" alt="Product 2">
+                    <h6 class="mt-3 title">Treandy Shirts</h6>
+                    <div>
+                        <span class="old-price"><i class="bi bi-currency-rupee"></i>579.00</span>
+                        <span class="new-price"><i class="bi bi-currency-rupee"></i>576.00</span>
+                    </div>
+                    <div class="countdown">
+                        <div class="timer-box">29<span>DAYS</span></div>
+                        <div class="timer-box">12<span>HR</span></div>
+                        <div class="timer-box">22<span>MIN</span></div>
+                        <div class="timer-box">11<span>SEC</span></div>
+                    </div>
+                </div>
+
+                <!-- Product Card -->
+                <div class="col-md-4 mb-4">
+                    <img src="./images/set.avif" class="img-fluid" alt="Product 3">
+                    <h6 class="mt-3 title">Shirts</h6>
+                    <div>
+                        <span class="old-price"><i class="bi bi-currency-rupee"></i> 579.00</span>
+                        <span class="new-price"><i class="bi bi-currency-rupee"></i>576.00</span>
+                    </div>
+                    <div class="countdown">
+                        <div class="timer-box">29<span>DAYS</span></div>
+                        <div class="timer-box">12<span>HR</span></div>
+                        <div class="timer-box">22<span>MIN</span></div>
+                        <div class="timer-box">11<span>SEC</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="btn btn-primary mt-4 light-bg" >VIEW ALL PRODUCTS</a>
+        </div>
+    </div>
+
+    <div class="py-2 light-color" >
+        <div class="container text-center my-3 px-4 px-lg-0">
+            <div class="row align-items-center my-3">
+                <div class="col">
+                    <hr class="border-secondary opacity-25">
+                </div>
+
+                <div class="col-auto">
+                    <h2 class="fw-bold mb-0">ALL CATEGORIES</h2>
+                </div>
+
+                <div class="col">
+                    <hr class="border-secondary opacity-25">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3">
+                    <ul class="list-unstyled" style="text-align: left;">
+                        <li class="p-1 light-blue">
+                            <h5>Women's Wear</h5>
+                        </li>
+                        <li class="p-1 text-black"><i class="bi bi-caret-right-fill light-blue"></i> All
+                            Sarees</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Silk
+                            Sarees</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Banarsi Silk Sarees</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Cotton
+                            Sarees</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Chiffon Sarees</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Heavy
+                            Work Sarees</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Net
+                            Sarees</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled" style="text-align: left; ">
+                        <li class="p-1 light-blue">
+                            <h5>Girl's Wear</h5>
+                        </li>
+                        <li class="p-1 text-black"><i class="bi bi-caret-right-fill light-blue"></i> All
+                            Kurties</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Anarkali Kurties</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Rayon
+                            Kurties</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Cotton
+                            Kurties</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Chikankari Kurties</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> All
+                            Top wear</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Palazzos</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled" style="text-align: left;">
+                        <li class="p-1 light-blue">
+                            <h5>Kids's Wear</h5>
+                        </li>
+                        <li class="p-1 text-black"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Dresses</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Girls
+                            Sets</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Boys
+                            Sets</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Ethnic
+                            Wear</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Night
+                            Wear</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Winter
+                            Wear</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Baby
+                            Sets</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled light-blue" style="text-align: left;">
+                        <li class="p-1">
+                            <h5>Men's Wear</h5>
+                        </li>
+                        <li class="p-1 text-black"><i class="bi bi-caret-right-fill light-blue"></i> All
+                            Top Wear</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Tshirts</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Shirts
+                        </li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Winter
+                            Wear</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Jackets</li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i> Jeans
+                        </li>
+                        <li class="text-black p-1"><i class="bi bi-caret-right-fill light-blue"></i>
+                            Trousers</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white py-5 px-3 px-lg-0  ">
+        <div class="container">
+            <div class="row">
+
+                <!-- TOP CATEGORIES -->
+                <div class="col-md-3 col-sm-6">
+                    <h5 class="fw-bold">TOP CATEGORIES</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Men Shirts</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Women Wear</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Girls Wear</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Kids Wear </a></li>
+                    </ul>
+                </div>
+
+                <!-- HELP -->
+                <div class="col-md-3 col-sm-6">
+                    <h5 class="fw-bold">HELP</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Delivery</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Returns</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Secure Payments</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Track an order</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <!-- ABOUT US -->
+                <div class="col-md-3 col-sm-6">
+                    <h5 class="fw-bold">ABOUT US</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Careers</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms & Conditions of Sales</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Responsibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- FEEDBACK -->
+                <div class="col-md-3 col-sm-6">
+                    <h5 class="fw-bold">FEEDBACK</h5>
+                    <a href="#" class="text-white text-decoration-none">Leave a feedback</a>
+                </div>
+
+            </div>
+
+            <hr class="bg-secondary mt-4 mb-3" />
+
+            <!-- BOTTOM SECTION -->
+            <div class="row align-items-center">
+
+                <!-- STORE LOCATOR -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">FIND A STORE</h6>
+                    <p>Find Timberland® Products Near You</p>
+                    <button class="btn btn-warning text-white fw-bold px-4">STORE LOCATOR</button>
+                </div>
+
+                <!-- SOCIAL MEDIA -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">FOLLOW US</h6>
+                    <a href="#" class="text-white me-3 fs-5"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3 fs-5"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+                </div>
+
+                <!-- NEWSLETTER -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">NEWSLETTER SUBSCRIPTION</h6>
+                    <p>Receive product news and updates in your inbox.</p>
+                    <div class="input-group mb-2">
+                        <input type="email" class="form-control" placeholder="Email Address" />
+                        <button class="btn btn-warning text-white fw-bold">➤</button>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="privacyCheck">
+                        <label class="form-check-label small" for="privacyCheck">
+                            I've read and accept Timberland's <a href="#"
+                                class="text-white text-decoration-underline">Privacy
+                                Policy</a>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PAYMENT ICONS -->
+            <div class="mt-4">
+                <p class="mb-2 fw-bold">SECURE ONLINE SHOPPING</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Visa_Logo.png/120px-Visa_Logo.png"
+                    alt="Visa" height="30">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mastercard-logo.png/120px-Mastercard-logo.png"
+                    alt="MasterCard" height="30">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/120px-PayPal.svg.png"
+                    alt="PayPal" height="30">
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function setupDropdown(toggleId, dropdownId) {
+            const toggle = document.getElementById(toggleId);
+            const dropdown = document.getElementById(dropdownId);
+            let isOpen = false;
+
+            toggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+
+                if (!isOpen) {
+                    dropdown.classList.remove("fade-out");
+                    dropdown.classList.add("show");
+                    isOpen = true;
+                } else {
+                    dropdown.classList.add("fade-out");
+                    setTimeout(() => {
+                        dropdown.classList.remove("show", "fade-out");
+                        isOpen = false;
+                    }, 500);
+                }
+            });
+
+            document.addEventListener("click", function (event) {
+                if (
+                    isOpen &&
+                    !dropdown.contains(event.target) &&
+                    !toggle.contains(event.target)
+                ) {
+                    dropdown.classList.add("fade-out");
+                    setTimeout(() => {
+                        dropdown.classList.remove("show", "fade-out");
+                        isOpen = false;
+                    }, 500);
+                }
+            });
+        }
+
+        // Call for both
+        setupDropdown("profileToggleDesktop", "profileDropdownDesktop");
+        setupDropdown("profileToggleMobile", "profileDropdownMobile");
+    </script>
 </body>
+
 </html>
